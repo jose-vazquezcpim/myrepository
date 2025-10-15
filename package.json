@@ -1,0 +1,9 @@
+{
+  "name": "prompt-library-static",
+  "version": "1.0.0",
+  "description": "Static replication of the Prompt Library for Executive & Strategic Communications",
+  "private": true,
+  "scripts": {
+    "start": "npx serve . -l 3000"
+  }
+}
