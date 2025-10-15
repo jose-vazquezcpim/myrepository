@@ -1,97 +1,141 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prompt Library — Executive & Strategic Communications</title>
-  <link rel="stylesheet" href="/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt Library for Executive and Strategic Communications</title>
+<style>
+:root{--bg:#f6f7fb;--text:#0f172a;--muted:#64748b;--card:#ffffff;--border:#e5e7eb;--accent:#2563eb;--shadow:0 10px 30px rgba(2,6,23,.08)}
+@media (prefers-color-scheme: dark){:root{--bg:#0b1020;--text:#e5e7eb;--muted:#9aa4b2;--card:#0f152a;--border:#1f2937;--accent:#60a5fa;--shadow:0 10px 30px rgba(0,0,0,.35)}}
+[data-theme="light"]{--bg:#f6f7fb;--text:#0f172a;--muted:#64748b;--card:#ffffff;--border:#e5e7eb;--accent:#2563eb;--shadow:0 10px 30px rgba(2,6,23,.08)}
+[data-theme="dark"]{--bg:#0b1020;--text:#e5e7eb;--muted:#9aa4b2;--card:#0f152a;--border:#1f2937;--accent:#60a5fa;--shadow:0 10px 30px rgba(0,0,0,.35)}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Noto Sans,Helvetica Neue,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.container{max-width:980px;margin:48px auto;padding:0 20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.toolbar{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);position:sticky;top:0;background:transparent;backdrop-filter:none;z-index:10}
+.title{font-weight:700;letter-spacing:.2px}
+.title small{display:block;color:var(--muted);font-weight:500}
+.actions{display:flex;gap:8px;align-items:center}
+button{appearance:none;border:1px solid var(--border);background:var(--card);color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600;transition:transform .06s ease,background-color .2s ease,border-color .2s ease}
+button:hover{background-color:rgba(37,99,235,.08);border-color:var(--accent)}
+button:active{transform:translateY(1px)}
+button.primary{background:var(--accent);color:#fff;border-color:transparent}
+button.primary:hover{filter:brightness(1.05)}
+.content{padding:16px 18px}
+pre{margin:0;background:transparent;color:inherit;white-space:pre-wrap;word-wrap:break-word;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Noto Sans,Helvetica Neue,sans-serif;font-size:16px;line-height:1.7}
+.footer{max-width:980px;margin:12px auto 0;padding:0 20px;color:var(--muted);font-size:12px;text-align:center}
+::selection{background:rgba(37,99,235,.25)}
+details{border:1px solid var(--border);border-radius:12px;background:transparent;margin:12px 0}
+summary{cursor:pointer;list-style:none;padding:12px 14px;font-weight:700}
+summary::-webkit-details-marker{display:none}
+details[open] summary{border-bottom:1px solid var(--border)}
+.details-body{padding:12px 14px;color:var(--text)}
+ul{margin:0 0 0 18px;padding:0}
+li{margin:8px 0}
+.intro{color:var(--muted);margin:6px 0 18px}
+.prompt-text{cursor:pointer;padding:2px 4px;border-radius:6px;transition:background-color .2s ease}
+.prompt-text:hover{background-color:rgba(37,99,235,.08)}
+.prompt-text.copied{background-color:rgba(96,165,250,.15)}
+.prompt-text.copied::after{content:' Copied!';color:var(--accent);font-weight:700;margin-left:6px}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Prompt Library</h1>
-      <p class="subtitle">Executive & Strategic Communications</p>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="intro">
-      <h2>Prompt Library for Executive and Strategic Communications</h2>
-      <p>This library organizes strategic prompts into categories to support executive reporting, internal communications, media monitoring, and stakeholder engagement. Each category includes examples and can be expanded based on use case.</p>
-      <div class="categories">
-        <div class="category">
-          <button class="pill" aria-expanded="false" data-target="cat-a">A. Executive Summary Prompts <svg class="caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></button>
-          <ul class="submenu" id="cat-a" role="menu" aria-label="Executive Summary Prompts">
-            <li class="submenu-item" tabindex="0" data-text="Summarize coverage report for a VP audience with three key insights and one strategic implication on [launch].">Summarize coverage report for a VP audience with three key insights and one strategic implication on [launch].</li>
-            <li class="submenu-item" tabindex="0" data-text="Draft a CVP-level briefing that highlights overall sentiment tone, risks, opportunities, and next steps on [launch].">Draft a CVP-level briefing that highlights overall sentiment tone, risks, opportunities, and next steps on [launch].</li>
-            <li class="submenu-item" tabindex="0" data-text="Draft an email for CVPs summarizing the impact of [initiative] with a call to action.">Draft an email for CVPs summarizing the impact of [initiative] with a call to action.</li>
-            <li class="submenu-item" tabindex="0" data-text="Pull an executive summary of this week’s global media coverage on [subject].">Pull an executive summary of this week’s global media coverage on [subject].</li>
-            <li class="submenu-item" tabindex="0" data-text="Give me a full coverage report on [topic] across media, analysts, social, and partners.">Give me a full coverage report on [topic] across media, analysts, social, and partners.</li>
-            <li class="submenu-item" tabindex="0" data-text="What’s the overall sentiment trend for [launch] this quarter?">What’s the overall sentiment trend for [launch] this quarter?</li>
-          </ul>
-        </div>
-
-        <div class="category">
-          <button class="pill" aria-expanded="false" data-target="cat-b">B. Internal Comms & Enablement Prompts <svg class="caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></button>
-          <ul class="submenu" id="cat-b" role="menu" aria-label="Internal Comms & Enablement Prompts">
-            <li class="submenu-item" tabindex="0" data-text="Draft an email for CVPs summarizing the impact of [initiative] with a call to action.">Draft an email for CVPs summarizing the impact of [initiative] with a call to action.</li>
-            <li class="submenu-item" tabindex="0" data-text="Summarize the top 3 insights from the latest analyst reports on [launch].">Summarize the top 3 insights from the latest analyst reports on [launch].</li>
-            <li class="submenu-item" tabindex="0" data-text="Highlight analyst concerns or praise around [announcement] from the last 30 days.">Highlight analyst concerns or praise around [announcement] from the last 30 days.</li>
-            <li class="submenu-item" tabindex="0" data-text="Compare analyst tone on [subject] across Gartner, Forrester, and IDC.">Compare analyst tone on [subject] across Gartner, Forrester, and IDC.</li>
-          </ul>
-        </div>
-
-        <div class="category">
-          <button class="pill" aria-expanded="false" data-target="cat-c">C. Analyst Research Prompts <svg class="caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></button>
-          <ul class="submenu" id="cat-c" role="menu" aria-label="Analyst Research Prompts">
-            <li class="submenu-item" tabindex="0" data-text="Summarize the top 3 insights from the latest analyst reports on [launch].">Summarize the top 3 insights from the latest analyst reports on [launch].</li>
-            <li class="submenu-item" tabindex="0" data-text="Compare analyst tone on [subject] across Gartner, Forrester, and IDC.">Compare analyst tone on [subject] across Gartner, Forrester, and IDC.</li>
-            <li class="submenu-item" tabindex="0" data-text="Highlight analyst concerns or praise around [announcement] from the last 30 days.">Highlight analyst concerns or praise around [announcement] from the last 30 days.</li>
-          </ul>
-        </div>
-
-        <div class="category">
-          <button class="pill" aria-expanded="false" data-target="cat-d">D. Global Media Coverage Prompts <svg class="caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></button>
-          <ul class="submenu" id="cat-d" role="menu" aria-label="Global Media Coverage Prompts">
-            <li class="submenu-item" tabindex="0" data-text="List all global articles mentioning [subject] this week, broken down by country and coverage type.">List all global articles mentioning [subject] this week, broken down by country and coverage type.</li>
-            <li class="submenu-item" tabindex="0" data-text="Summarize international press coverage on [launch] and highlight major vs. minor mentions.">Summarize international press coverage on [launch] and highlight major vs. minor mentions.</li>
-            <li class="submenu-item" tabindex="0" data-text="What’s the media sentiment around [announcement] in Americas, EMEA and APAC?">What’s the media sentiment around [announcement] in Americas, EMEA and APAC?</li>
-            <li class="submenu-item" tabindex="0" data-text="What’s the media sentiment around [announcement] in EMEA [or Americas, or APAC]?">What’s the media sentiment around [announcement] in EMEA [or Americas, or APAC]?</li>
-          </ul>
-        </div>
-
-        <div class="category">
-          <button class="pill" aria-expanded="false" data-target="cat-e">E. Social Media Prompts <svg class="caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></button>
-          <ul class="submenu" id="cat-e" role="menu" aria-label="Social Media Prompts">
-            <li class="submenu-item" tabindex="0" data-text="Summarize social media sentiment around [announcement] from LinkedIn and X.">Summarize social media sentiment around [announcement] from LinkedIn and X.</li>
-            <li class="submenu-item" tabindex="0" data-text="What are the top trending hashtags and reactions to [launch]?">What are the top trending hashtags and reactions to [launch]?</li>
-            <li class="submenu-item" tabindex="0" data-text="Pull influencer commentary and engagement metrics for [subject].">Pull influencer commentary and engagement metrics for [subject].</li>
-          </ul>
-        </div>
-
-        <div class="category">
-          <button class="pill" aria-expanded="false" data-target="cat-f">F. Partner Sentiment Prompts <svg class="caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></button>
-          <ul class="submenu" id="cat-f" role="menu" aria-label="Partner Sentiment Prompts">
-            <li class="submenu-item" tabindex="0" data-text="Highlight positive and negative partner sentiment by region.">Highlight positive and negative partner sentiment by region.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="prompts">
-      <h3>Examples</h3>
-      <ul class="prompt-list">
-        <li class="prompt-item" tabindex="0" data-text="Write a concise executive summary highlighting the top 3 risks and 2 opportunities from the past quarter.">Write a concise executive summary highlighting the top 3 risks and 2 opportunities from the past quarter.</li>
-        <li class="prompt-item" tabindex="0" data-text="Draft an internal announcement that explains the change, reason, and next steps in plain language.">Draft an internal announcement that explains the change, reason, and next steps in plain language.</li>
-        <li class="prompt-item" tabindex="0" data-text="Summarize analyst reports and extract consensus sentiment across the top 5 sources.">Summarize analyst reports and extract consensus sentiment across the top 5 sources.</li>
-        <li class="prompt-item" tabindex="0" data-text="Monitor global media coverage for brand mentions and flag high-impact stories.">Monitor global media coverage for brand mentions and flag high-impact stories.</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <div id="toast" aria-live="polite" class="toast">Copied!</div>
-
-  <script src="/script.js"></script>
+<div class="container">
+<div class="card">
+<div class="toolbar">
+<div class="title">Prompt Library<span class="sr-only"></span><small>Executive &amp; Strategic Communications</small></div>
+<div class="actions">
+<button id="themeBtn" aria-label="Toggle theme"><span id="themeLabel">Auto</span> theme</button>
+</div>
+</div>
+<div class="content">
+<p>Prompt Library for Executive and Strategic Communications</p>
+<p class="intro">This library organizes strategic prompts into categories to support executive reporting, internal communications, media monitoring, and stakeholder engagement. Each category includes examples and can be expanded based on use case.</p>
+<details>
+<summary>A. Executive Summary Prompts</summary>
+<div class="details-body">
+<p>For VP/CVP-level audiences, focusing on strategic synthesis:</p>
+<ul>
+<li><span class="prompt-text" data-copy>Summarize coverage report for a VP audience with three key insights and one strategic implication on [launch].</span></li>
+<li><span class="prompt-text" data-copy>Draft a CVP-level briefing that highlights overall sentiment tone, risks, opportunities, and next steps on [launch].</span></li>
+<li><span class="prompt-text" data-copy>Draft an email for CVPs summarizing the impact of [initiative] with a call to action.</span></li>
+<li><span class="prompt-text" data-copy>Pull an executive summary of this week’s global media coverage on [subject].</span></li>
+<li><span class="prompt-text" data-copy>Give me a full coverage report on [topic] across media, analysts, social, and partners.</span></li>
+<li><span class="prompt-text" data-copy>What’s the overall sentiment trend for [launch] this quarter?</span></li>
+</ul>
+</div>
+</details>
+<details>
+<summary>B. Internal Comms &amp; Enablement Prompts</summary>
+<div class="details-body">
+<p>For internal updates, stakeholder alignment, and planning:</p>
+<ul>
+<li><span class="prompt-text" data-copy>Draft an email for CVPs summarizing the impact of [initiative] with a call to action.</span></li>
+<li><span class="prompt-text" data-copy>Summarize the top 3 insights from the latest analyst reports on [launch].</span></li>
+<li><span class="prompt-text" data-copy>Highlight analyst concerns or praise around [announcement] from the last 30 days.</span></li>
+<li><span class="prompt-text" data-copy>Compare analyst tone on [subject] across Gartner, Forrester, and IDC.</span></li>
+</ul>
+</div>
+</details>
+<details>
+<summary>C. Analyst Research Prompts</summary>
+<div class="details-body">
+<p>Focused on third-party insights and competitive intelligence:</p>
+<ul>
+<li><span class="prompt-text" data-copy>Summarize the top 3 insights from the latest analyst reports on [launch].</span></li>
+<li><span class="prompt-text" data-copy>Compare analyst tone on [subject] across Gartner, Forrester, and IDC.</span></li>
+<li><span class="prompt-text" data-copy>Highlight analyst concerns or praise around [announcement] from the last 30 days.</span></li>
+</ul>
+</div>
+</details>
+<details>
+<summary>D. Global Media Coverage Prompts</summary>
+<div class="details-body">
+<p>For tracking press mentions and sentiment across regions:</p>
+<ul>
+<li><span class="prompt-text" data-copy>List all global articles mentioning [subject] this week, broken down by country and coverage type.</span></li>
+<li><span class="prompt-text" data-copy>Summarize international press coverage on [launch] and highlight major vs. minor mentions.</span></li>
+<li><span class="prompt-text" data-copy>What’s the media sentiment around [announcement] in Americas, EMEA and APAC?</span></li>
+<li><span class="prompt-text" data-copy>What’s the media sentiment around [announcement] in EMEA [or Americas, or APAC]?</span></li>
+</ul>
+</div>
+</details>
+<details>
+<summary>E. Social Media Prompts</summary>
+<div class="details-body">
+<p>To monitor real-time reactions and influencer engagement:</p>
+<ul>
+<li><span class="prompt-text" data-copy>Summarize social media sentiment around [announcement] from LinkedIn and X.</span></li>
+<li><span class="prompt-text" data-copy>What are the top trending hashtags and reactions to [launch]?</span></li>
+<li><span class="prompt-text" data-copy>Pull influencer commentary and engagement metrics for [subject].</span></li>
+</ul>
+</div>
+</details>
+<details>
+<summary>F. Partner Sentiment Prompts</summary>
+<div class="details-body">
+<p>To capture ecosystem feedback and regional partner dynamics:</p>
+<ul>
+<li><span class="prompt-text" data-copy>Highlight positive and negative partner sentiment by region.</span></li>
+</ul>
+</div>
+</details>
+<p>This library can be adapted for use in Copilot workflows, briefing templates, or automated reporting systems.</p>
+</div>
+</div>
+</div>
+<div class="footer">Hover any prompt and click it to copy. A “Copied!” note will appear briefly.</div>
+<script>
+(function(){
+var root=document.documentElement;var themeBtn=document.getElementById('themeBtn');var themeLabel=document.getElementById('themeLabel');var saved=localStorage.getItem('theme');if(saved){root.setAttribute('data-theme',saved);}
+function current(){return root.getAttribute('data-theme')||'auto'}
+function setTheme(next){if(next==='auto'){root.removeAttribute('data-theme');localStorage.removeItem('theme');}else{root.setAttribute('data-theme',next);localStorage.setItem('theme',next);}themeLabel.textContent=next.charAt(0).toUpperCase()+next.slice(1)}
+if(themeBtn){themeBtn.addEventListener('click',function(){var c=current();var next=c==='auto'?'light':(c==='light'?'dark':'auto');setTheme(next)})}
+document.addEventListener('click',function(e){var t=e.target;if(!(t&&t.matches('.prompt-text[data-copy]')))return;var txt=t.innerText;var markCopied=function(el){el.classList.add('copied');setTimeout(function(){el.classList.remove('copied')},1200)};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){markCopied(t)}).catch(function(){try{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);markCopied(t)}catch(err){alert('Copy failed')}})}else{try{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);markCopied(t)}catch(err){alert('Copy failed')}}});
+})();
+</script>
 </body>
 </html>
+
+ 

@@ -30,3 +30,5 @@ jobs:
           app_location: "/"
           api_location: ""
           app_artifact_location: "/"
+          # Skip the Oryx build step because this is a plain static site (no build script)
+          skip_app_build: true
