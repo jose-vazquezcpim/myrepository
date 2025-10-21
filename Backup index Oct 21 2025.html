@@ -13,7 +13,7 @@ html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Noto Sans,Helvetica Neue,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .container{max-width:980px;margin:48px auto;padding:0 20px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
-.toolbar{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);position:sticky;top:0;background:transparent;z-index:10}
+.toolbar{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);position:sticky;top:0;background:transparent;backdrop-filter:none;z-index:10}
 .title{font-weight:700;letter-spacing:.2px}
 .title small{display:block;color:var(--muted);font-weight:500}
 .actions{display:flex;gap:8px;align-items:center}
@@ -23,6 +23,7 @@ button:active{transform:translateY(1px)}
 button.primary{background:var(--accent);color:#fff;border-color:transparent}
 button.primary:hover{filter:brightness(1.05)}
 .content{padding:16px 18px}
+pre{margin:0;background:transparent;color:inherit;white-space:pre-wrap;word-wrap:break-word;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Noto Sans,Helvetica Neue,sans-serif;font-size:16px;line-height:1.7}
 .footer{max-width:980px;margin:12px auto 0;padding:0 20px;color:var(--muted);font-size:12px;text-align:center}
 ::selection{background:rgba(37,99,235,.25)}
 details{border:1px solid var(--border);border-radius:12px;background:transparent;margin:12px 0}
@@ -37,25 +38,20 @@ li{margin:8px 0}
 .prompt-text:hover{background-color:rgba(37,99,235,.08)}
 .prompt-text.copied{background-color:rgba(96,165,250,.15)}
 .prompt-text.copied::after{content:' Copied!';color:var(--accent);font-weight:700;margin-left:6px}
-.video-btn{display:inline-flex;align-items:center;gap:6px;margin:12px 0;padding:10px 16px;font-size:15px;border-radius:8px;background:var(--accent);color:#fff;border:none;cursor:pointer;box-shadow:var(--shadow)}
-.video-btn:hover{filter:brightness(1.05)}
-.video-btn svg{width:18px;height:18px;fill:#fff}
 </style>
 </head>
 <body>
 <div class="container">
 <div class="card">
 <div class="toolbar">
-<div class="title">Prompt Library<span class="sr-only"></span><small>AURA</small></div>
+<div class="title">Prompt Library<span class="sr-only"></span><small>AURA </small></div>
 <div class="actions">
 <button id="themeBtn" aria-label="Toggle theme"><span id="themeLabel">Auto</span> theme</button>
 </div>
 </div>
 <div class="content">
 <p>Prompt Library for AURA ecosystem</p>
-<p class="intro">This library organizes AURA prompts into categories to support reporting, internal communications, monitoring, and stakeholder engagement. Each category includes examples and can be expanded based on use case.</p>
-
-<!-- A -->
+<p class="intro">This library organizes AURA prompts into categories to support reporting, internal communications, mmonitoring, and stakeholder engagement. Each category includes examples and can be expanded based on use case.</p>
 <details>
 <summary>A. MBR Insights (Iris)</summary>
 <div class="details-body">
@@ -70,8 +66,6 @@ li{margin:8px 0}
 </ul>
 </div>
 </details>
-
-<!-- B -->
 <details>
 <summary>B. Marketplace Prompts (Frida)</summary>
 <div class="details-body">
@@ -84,8 +78,6 @@ li{margin:8px 0}
 </ul>
 </div>
 </details>
-
-<!-- C -->
 <details>
 <summary>C. Commerce Prompts (Gibbs)</summary>
 <div class="details-body">
@@ -97,8 +89,6 @@ li{margin:8px 0}
 </ul>
 </div>
 </details>
-
-<!-- D -->
 <details>
 <summary>D. Incident Management Prompts (Jasper)</summary>
 <div class="details-body">
@@ -106,82 +96,46 @@ li{margin:8px 0}
 <ul>
 <li><span class="prompt-text" data-copy>Ask Jasper to List all IcMs mentioning [subject] this week, broken down by Engineering team.</span></li>
 <li><span class="prompt-text" data-copy>Ask Jasper to give me Weekly ICM report.</span></li>
-<li><span class="prompt-text" data-copy>Ask Jasper to provide with my ICM incidents.</span></li>
+<li><span class="prompt-text" data-copy>Ask Jasper to provide with my ICM incidents </span></li>
 <li><span class="prompt-text" data-copy>What’s the theme for the last [] days?</span></li>
 </ul>
 </div>
 </details>
-
-<!-- E -->
 <details>
-<summary>E. Other Resources</summary>
+<summary>E. Other Prompts</summary>
 <div class="details-body">
-<p>Additional reference materials and quick video demos:</p>
-<div style="text-align:center;">
-  <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=gfiUI2YLsgc','_blank')">
-    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Watch on YouTube
-  </button>
-  <p style="color:var(--muted);font-size:14px;margin-top:8px;">
-    Opens in a new tab for best playback inside Teams.
-  </p>
-</div>
+<p>To monitor engagement on general topics:</p>
+<ul>
+<li><span class="prompt-text" data-copy>Summarize  around [announcement] from LinkedIn and X.</span></li>
+<li><span class="prompt-text" data-copy>What are the top  [launch]?</span></li>
+<li><span class="prompt-text" data-copy>Pull information about [subject].</span></li>
+</ul>
 </div>
 </details>
-
-<!-- F -->
 <details>
 <summary>F. Other Prompts</summary>
 <div class="details-body">
-<p>To capture partner dynamics:</p>
+<p>To capture  partner dynamics:</p>
 <ul>
 <li><span class="prompt-text" data-copy>Highlight advantages of [ ] region.</span></li>
 </ul>
 </div>
 </details>
-
 <p>This library can be adapted for use in Copilot workflows, briefing templates, or automated reporting systems.</p>
 </div>
 </div>
 </div>
 <div class="footer">Hover any prompt and click it to copy. A “Copied!” note will appear briefly.</div>
-
 <script>
 (function(){
-  // Theme toggle
-  const root=document.documentElement;
-  const themeBtn=document.getElementById('themeBtn');
-  const themeLabel=document.getElementById('themeLabel');
-  const saved=localStorage.getItem('theme');
-  if(saved){root.setAttribute('data-theme',saved);}
-  function current(){return root.getAttribute('data-theme')||'auto'}
-  function setTheme(next){
-    if(next==='auto'){root.removeAttribute('data-theme');localStorage.removeItem('theme');}
-    else{root.setAttribute('data-theme',next);localStorage.setItem('theme',next);}
-    themeLabel.textContent=next.charAt(0).toUpperCase()+next.slice(1);
-  }
-  if(themeBtn){
-    themeBtn.addEventListener('click',()=>{
-      var c=current();
-      var next=c==='auto'?'light':(c==='light'?'dark':'auto');
-      setTheme(next);
-    });
-  }
-
-  // Copy prompt handler
-  document.addEventListener('click',function(e){
-    const t=e.target;
-    if(!(t&&t.matches('.prompt-text[data-copy]')))return;
-    const txt=t.innerText;
-    const markCopied=(el)=>{el.classList.add('copied');setTimeout(()=>el.classList.remove('copied'),1200)};
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(txt).then(()=>markCopied(t));
-    }else{
-      const ta=document.createElement('textarea');
-      ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');
-      document.body.removeChild(ta);markCopied(t);
-    }
-  });
+var root=document.documentElement;var themeBtn=document.getElementById('themeBtn');var themeLabel=document.getElementById('themeLabel');var saved=localStorage.getItem('theme');if(saved){root.setAttribute('data-theme',saved);}
+function current(){return root.getAttribute('data-theme')||'auto'}
+function setTheme(next){if(next==='auto'){root.removeAttribute('data-theme');localStorage.removeItem('theme');}else{root.setAttribute('data-theme',next);localStorage.setItem('theme',next);}themeLabel.textContent=next.charAt(0).toUpperCase()+next.slice(1)}
+if(themeBtn){themeBtn.addEventListener('click',function(){var c=current();var next=c==='auto'?'light':(c==='light'?'dark':'auto');setTheme(next)})}
+document.addEventListener('click',function(e){var t=e.target;if(!(t&&t.matches('.prompt-text[data-copy]')))return;var txt=t.innerText;var markCopied=function(el){el.classList.add('copied');setTimeout(function(){el.classList.remove('copied')},1200)};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){markCopied(t)}).catch(function(){try{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);markCopied(t)}catch(err){alert('Copy failed')}})}else{try{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);markCopied(t)}catch(err){alert('Copy failed')}}});
 })();
 </script>
 </body>
 </html>
+
+ 
