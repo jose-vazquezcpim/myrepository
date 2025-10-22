@@ -31,9 +31,8 @@ li{margin:8px 0}
 .prompt-text.copied::after{content:' Copied!';color:var(--accent);font-weight:700;margin-left:6px}
 .send-btn{margin-left:8px;border:1px solid var(--border);background:transparent;color:var(--accent);padding:4px 8px;border-radius:6px;font-size:13px;opacity:0;transition:opacity .2s ease}
 li:hover .send-btn{opacity:1}
-.video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);margin-top:10px}
-.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-.video-caption{color:var(--muted);font-size:14px;margin-top:8px}
+.video-btn{display:inline-flex;align-items:center;gap:6px;margin:12px 0;padding:10px 16px;font-size:15px;border-radius:8px;background:var(--accent);color:#fff;border:none;cursor:pointer}
+.video-btn:hover{filter:brightness(1.05)}
 </style>
 </head>
 <body>
@@ -53,16 +52,16 @@ li:hover .send-btn{opacity:1}
 <div class="details-body">
 <p>For billing, agreement, and commerce orchestration workflows:</p>
 <ul>
-<li><span class="prompt-text" data-copy>Ask Orch-MCA to list all the differences between EA and MCA to explain to the customer.</span>
-<button class="send-btn" data-send="Ask Orch-MCA to list all the differences between EA and MCA to explain to the customer.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Ask Orch-MCA to list all at the differences between EA and MCA to explain to the customer.</span>
+<button class="send-btn" data-send="Ask Orch-MCA to list all at the differences between EA and MCA to explain to the customer..">Send to Chat</button></li>
 <li><span class="prompt-text" data-copy>Request Orch-MCA to summarize the top five customer objections to migrate from EA to MCA with suggested counter messages.</span>
 <button class="send-btn" data-send="Request Orch-MCA to summarize the top five customer objections to migrate from EA to MCA with suggested counter messages.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Instruct Orch-MCA to generate an onboarding MCA plan for my customer explaining all the steps required.</span>
-<button class="send-btn" data-send="Instruct Orch-MCA to generate an onboarding MCA plan for my customer explaining all the steps required.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Ask Orch-MCA to find information about CAPT agreements and implementation steps.</span>
-<button class="send-btn" data-send="Ask Orch-MCA to find information about CAPT agreements and implementation steps.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Ask Orch-MCA to summarize the top risks of migrating from EA to MCA.</span>
-<button class="send-btn" data-send="Ask Orch-MCA to summarize the top risks of migrating from EA to MCA.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Instruct Orch-MCA to generate an Onboarding MCA plan for my customer explaining all the steps the customer need to take.</span>
+<button class="send-btn" data-send="Instruct Orch-MCA to generate an Onboarding MCA plan for my customer explaining all the steps the customer need to take.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Ask Orch-MCA to find information about benefits of CAPT agreements and what is the process to make the implementation.</span>
+<button class="send-btn" data-send="Ask Orch-MCA to find information about benefits of CAPT agreements and what is the process to make the implementation.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Ask Orch-MCA to summarize the top risks of migrating EA to MCA .</span>
+<button class="send-btn" data-send="Ask Orch-MCA to summarize the top risks of migrating EA to MCA,">Send to Chat</button></li>
 </ul>
 </div>
 </details>
@@ -73,16 +72,16 @@ li:hover .send-btn{opacity:1}
 <div class="details-body">
 <p>For Marketplace offer coordination and partner enablement:</p>
 <ul>
-<li><span class="prompt-text" data-copy>Ask Orch-Marketplace to list top Marketplace business benefits to customers.</span>
-<button class="send-btn" data-send="Ask Orch-Marketplace to list top Marketplace business benefits to customers.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Request Orch-Marketplace to summarize differences between private offers and public offers.</span>
-<button class="send-btn" data-send="Request Orch-Marketplace to summarize differences between private offers and public offers.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Instruct Orch-Marketplace to explain customer objections to adopt Marketplace and counter messages.</span>
-<button class="send-btn" data-send="Instruct Orch-Marketplace to explain customer objections to adopt Marketplace and counter messages.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Ask Orch-Marketplace to draft a summary of Marketplace benefits for procurement and finance stakeholders.</span>
-<button class="send-btn" data-send="Ask Orch-Marketplace to draft a summary of Marketplace benefits for procurement and finance stakeholders.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Ask Orch-Marketplace to generate a comparison of offer activation rates across regions for top ISVs.</span>
-<button class="send-btn" data-send="Ask Orch-Marketplace to generate a comparison of offer activation rates across regions for top ISVs.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Ask Orch-Marketplace to list top Marketplace business benefits to the customers.</span>
+<button class="send-btn" data-send="Ask Orch-Marketplace to list top Marketplace business benefits to the customers.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Request Orch-Marketplace to summarize differences versus private offer and private offers.</span>
+<button class="send-btn" data-send="Request Orch-Marketplace to summarize differences versus private offer and private offers.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Instruct Orch-Marketplace to explain the customer objections to adopt Marketplace and counter message .</span>
+<button class="send-btn" data-send="Instruct Orch-Marketplace to explain the customer objections to adopt Marketplace and counter message.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Ask Orch-Marketplace to draft a summary of Marketplace benefits focused on Procurement and Finance.</span>
+<button class="send-btn" data-send="Ask Orch-Marketplace to draft a summary of Marketplace benefits focused on Procurement and Finance.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Ask Orch-Marketplace to generate a comparison of offer activation rates across regions for top five ISVs.</span>
+<button class="send-btn" data-send="Ask Orch-Marketplace to generate a comparison of offer activation rates across regions for top five ISVs.">Send to Chat</button></li>
 </ul>
 </div>
 </details>
@@ -117,8 +116,8 @@ li:hover .send-btn{opacity:1}
 <button class="send-btn" data-send="Ask Orch-Insights to provide a summary of the Highlights and LowLights for MBR.">Send to Chat</button></li>
 <li><span class="prompt-text" data-copy>Request Orch-Insights to summarize any customer sentiment across LATAM based on the latest insight inputs.</span>
 <button class="send-btn" data-send="Request Orch-Insights to summarize any customer sentiment across LATAM based on the latest insight inputs.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Instruct Orch-Insights to generate a report showing learnings for the last month.</span>
-<button class="send-btn" data-send="Instruct Orch-Insights to generate a report showing learnings for the last month.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Instruct Orch-Insights to generate a report showing Learnings for the last month.</span>
+<button class="send-btn" data-send="Instruct Orch-Insights to generate a report showing Learnings for the last month.">Send to Chat</button></li>
 <li><span class="prompt-text" data-copy>Ask Orch-Insights to identify common keywords or themes across all insights for the last month.</span>
 <button class="send-btn" data-send="Ask Orch-Insights to identify common keywords or themes across all insights for the last month.">Send to Chat</button></li>
 <li><span class="prompt-text" data-copy>Ask Orch-Insights to produce an executive summary for LT showing trends and risk across all customers.</span>
@@ -132,14 +131,12 @@ li:hover .send-btn{opacity:1}
 <summary>E. Other Resources</summary>
 <div class="details-body">
 <p>Additional reference materials and quick video demos:</p>
-<div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/gfiUI2YLsgc?rel=0&modestbranding=1&playsinline=1" 
-    title="Prompt Orchestrator Demo" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
+<div style="text-align:center;">
+  <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=gfiUI2YLsgc','_blank')">
+    <svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg> Watch on YouTube
+  </button>
+  <p style="color:var(--muted);font-size:14px;margin-top:8px;">Opens in a new tab for best playback inside Teams.</p>
 </div>
-<p class="video-caption">▶ Watch directly in Teams — interactive demo video.</p>
 </div>
 </details>
 
