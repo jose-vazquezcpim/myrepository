@@ -60,7 +60,7 @@ li:hover .send-btn{opacity:1}
 
 <div class="content">
 <p>Prompt Library for AURA ecosystem</p>
-<p class="intro">This library organizes AURA prompts into categories to support reporting, internal communications, monitoring, and stakeholder engagement.</p>
+<p class="intro">This library organizes AURA prompts into categories to support reporting, internal communications, monitoring, and stakeholder engagement. Each category includes examples and can be expanded based on use case.</p>
 
 <!-- === A === -->
 <details>
@@ -70,10 +70,21 @@ li:hover .send-btn{opacity:1}
 <ul>
 <li><span class="prompt-text" data-copy>Ask agent Iris to provide an executive summary that organizes top 5 Highlights insights and top 5 lowlights for separated by MCA, Per Seat, and Marketplace.</span>
 <button class="send-btn" data-send="Ask agent Iris to provide an executive summary that organizes top 5 Highlights insights and top 5 lowlights for separated by MCA, Per Seat, and Marketplace.">Send to Chat</button></li>
+
 <li><span class="prompt-text" data-copy>Ask agent Iris to draft a CVP-level briefing that highlights overall sentiment tone, risks, opportunities, and next steps on [launch].</span>
 <button class="send-btn" data-send="Ask agent Iris to draft a CVP-level briefing that highlights overall sentiment tone, risks, opportunities, and next steps on [launch].">Send to Chat</button></li>
+
 <li><span class="prompt-text" data-copy>Ask agent Iris to draft an email for CVPs summarizing the impact of [initiative] with a call to action.</span>
 <button class="send-btn" data-send="Ask agent Iris to draft an email for CVPs summarizing the impact of [initiative] with a call to action.">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>As agent Iris to pull an executive summary of this week’s insights keyword [subject].</span>
+<button class="send-btn" data-send="As agent Iris to pull an executive summary of this week’s insights keyword [subject].">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>Ask agent Iris to give me a full report on [topic] across MCA per-seat.</span>
+<button class="send-btn" data-send="Ask agent Iris to give me a full report on [topic] across MCA per-seat.">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>Ask agent Iris What’s the overall sentiment trend for [keyword] this month?</span>
+<button class="send-btn" data-send="Ask agent Iris What’s the overall sentiment trend for [keyword] this month?">Send to Chat</button></li>
 </ul>
 </div>
 </details>
@@ -86,8 +97,15 @@ li:hover .send-btn{opacity:1}
 <ul>
 <li><span class="prompt-text" data-copy>Ask Frida to Draft an email for CVPs summarizing the impact of [initiative] with a call to action.</span>
 <button class="send-btn" data-send="Ask Frida to Draft an email for CVPs summarizing the impact of [initiative] with a call to action.">Send to Chat</button></li>
+
 <li><span class="prompt-text" data-copy>Ask Frida to Summarize the top Benefits for Marketplace, particularly [keyword].</span>
 <button class="send-btn" data-send="Ask Frida to Summarize the top Benefits for Marketplace, particularly [keyword].">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>Highlight analyst concerns or praise around [announcement] from the last 30 days.</span>
+<button class="send-btn" data-send="Highlight analyst concerns or praise around [announcement] from the last 30 days.">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>Compare analyst tone on [subject] across Gartner, Forrester, and IDC.</span>
+<button class="send-btn" data-send="Compare analyst tone on [subject] across Gartner, Forrester, and IDC.">Send to Chat</button></li>
 </ul>
 </div>
 </details>
@@ -100,6 +118,12 @@ li:hover .send-btn{opacity:1}
 <ul>
 <li><span class="prompt-text" data-copy>Summarize the top 3 insights from the latest analyst reports on [launch].</span>
 <button class="send-btn" data-send="Summarize the top 3 insights from the latest analyst reports on [launch].">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>Compare analyst tone on [subject] across Gartner, Forrester, and IDC.</span>
+<button class="send-btn" data-send="Compare analyst tone on [subject] across Gartner, Forrester, and IDC.">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>Highlight analyst concerns or praise around [announcement] from the last 30 days.</span>
+<button class="send-btn" data-send="Highlight analyst concerns or praise around [announcement] from the last 30 days.">Send to Chat</button></li>
 </ul>
 </div>
 </details>
@@ -112,6 +136,15 @@ li:hover .send-btn{opacity:1}
 <ul>
 <li><span class="prompt-text" data-copy>Ask Jasper to List all IcMs mentioning [subject] this week, broken down by Engineering team.</span>
 <button class="send-btn" data-send="Ask Jasper to List all IcMs mentioning [subject] this week, broken down by Engineering team.">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>Ask Jasper to give me Weekly ICM report.</span>
+<button class="send-btn" data-send="Ask Jasper to give me Weekly ICM report.">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>Ask Jasper to provide with my ICM incidents.</span>
+<button class="send-btn" data-send="Ask Jasper to provide with my ICM incidents.">Send to Chat</button></li>
+
+<li><span class="prompt-text" data-copy>What’s the theme for the last [] days?</span>
+<button class="send-btn" data-send="What’s the theme for the last [] days?">Send to Chat</button></li>
 </ul>
 </div>
 </details>
@@ -130,6 +163,18 @@ li:hover .send-btn{opacity:1}
 </div>
 </details>
 
+<!-- === F === -->
+<details>
+<summary>F. Other Prompts</summary>
+<div class="details-body">
+<p>To capture partner dynamics:</p>
+<ul>
+<li><span class="prompt-text" data-copy>Highlight advantages of [ ] region.</span>
+<button class="send-btn" data-send="Highlight advantages of [ ] region.">Send to Chat</button></li>
+</ul>
+</div>
+</details>
+
 </div>
 </div>
 </div>
@@ -137,6 +182,8 @@ li:hover .send-btn{opacity:1}
 
 <script>
 (function(){
+  const botId = "2944efdc-b6da-4796-9b7e-216fab0baa58"; // Steve Copilot botId
+
   // Theme toggle
   const root=document.documentElement;
   const themeBtn=document.getElementById('themeBtn');
@@ -165,16 +212,20 @@ li:hover .send-btn{opacity:1}
   // Teams SDK init
   microsoftTeams.app.initialize().then(()=>console.log("Teams SDK ready")).catch(()=>{});
 
-  // Send to Chat
+  // Send to Chat using Teams deep link
   document.addEventListener('click',function(e){
     const btn=e.target;
     if(!(btn&&btn.matches('.send-btn[data-send]')))return;
     const message=btn.getAttribute('data-send');
-    microsoftTeams.chat.openChat({message:message}).catch(err=>{
-      console.warn("Chat API not available, fallback:",err);
+    const encodedMsg=encodeURIComponent(message);
+    const deepLink=`https://teams.microsoft.com/l/chat/0/0?users=${botId}&message=${encodedMsg}`;
+    try {
+      window.open(deepLink,'_blank');
+    } catch(err){
+      console.warn("Deep link failed, fallback:",err);
       navigator.clipboard.writeText(message);
-      alert("Sent to Chat unavailable here; prompt copied to clipboard instead.");
-    });
+      alert("Unable to open Teams. Prompt copied to clipboard instead.");
+    }
   });
 })();
 </script>
