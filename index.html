@@ -31,6 +31,10 @@ li{margin:8px 0}
 .prompt-text.copied::after{content:' Copied!';color:var(--accent);font-weight:700;margin-left:6px}
 .send-btn{margin-left:8px;border:1px solid var(--border);background:transparent;color:var(--accent);padding:4px 8px;border-radius:6px;font-size:13px;opacity:0;transition:opacity .2s ease}
 li:hover .send-btn{opacity:1}
+.send-btn:hover{background-color:rgba(37,99,235,.08)}
+.suggest-section{margin-top:14px;text-align:right}
+.suggest-main{background:var(--accent);color:#fff;border:none;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+.suggest-main:hover{filter:brightness(1.05)}
 .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);margin-top:10px}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 .video-caption{color:var(--muted);font-size:14px;margin-top:8px}
@@ -64,6 +68,7 @@ li:hover .send-btn{opacity:1}
 <li><span class="prompt-text" data-copy>Ask Orch-MCA to summarize the top risks of migrating from EA to MCA.</span>
 <button class="send-btn" data-send="Ask Orch-MCA to summarize the top risks of migrating from EA to MCA.">Send to Chat</button></li>
 </ul>
+<div class="suggest-section"><button class="suggest-main" data-agent="Orch-MCA">💡 Suggest a New Prompt</button></div>
 </div>
 </details>
 
@@ -84,6 +89,7 @@ li:hover .send-btn{opacity:1}
 <li><span class="prompt-text" data-copy>Ask Orch-Marketplace to generate a comparison of offer activation rates across regions for top ISVs.</span>
 <button class="send-btn" data-send="Ask Orch-Marketplace to generate a comparison of offer activation rates across regions for top ISVs.">Send to Chat</button></li>
 </ul>
+<div class="suggest-section"><button class="suggest-main" data-agent="Orch-Marketplace">💡 Suggest a New Prompt</button></div>
 </div>
 </details>
 
@@ -104,6 +110,7 @@ li:hover .send-btn{opacity:1}
 <li><span class="prompt-text" data-copy>Ask Orch-Incidents to summarize top five engineering teams with highest incident volume last month.</span>
 <button class="send-btn" data-send="Ask Orch-Incidents to summarize top five engineering teams with highest incident volume last month.">Send to Chat</button></li>
 </ul>
+<div class="suggest-section"><button class="suggest-main" data-agent="Orch-Incidents">💡 Suggest a New Prompt</button></div>
 </div>
 </details>
 
@@ -115,8 +122,8 @@ li:hover .send-btn{opacity:1}
 <ul>
 <li><span class="prompt-text" data-copy>Ask Orch-Insights to provide a summary of the Highlights and LowLights for MBR.</span>
 <button class="send-btn" data-send="Ask Orch-Insights to provide a summary of the Highlights and LowLights for MBR.">Send to Chat</button></li>
-<li><span class="prompt-text" data-copy>Request Orch-Insights to summarize any customer sentiment across LATAM based on the latest insight inputs.</span>
-<button class="send-btn" data-send="Request Orch-Insights to summarize any customer sentiment across LATAM based on the latest insight inputs.">Send to Chat</button></li>
+<li><span class="prompt-text" data-copy>Request Orch-Insights to summarize any customer sentiment across LATAM based on the latest inputs.</span>
+<button class="send-btn" data-send="Request Orch-Insights to summarize any customer sentiment across LATAM based on the latest inputs.">Send to Chat</button></li>
 <li><span class="prompt-text" data-copy>Instruct Orch-Insights to generate a report showing learnings for the last month.</span>
 <button class="send-btn" data-send="Instruct Orch-Insights to generate a report showing learnings for the last month.">Send to Chat</button></li>
 <li><span class="prompt-text" data-copy>Ask Orch-Insights to identify common keywords or themes across all insights for the last month.</span>
@@ -124,6 +131,7 @@ li:hover .send-btn{opacity:1}
 <li><span class="prompt-text" data-copy>Ask Orch-Insights to produce an executive summary for LT showing trends and risk across all customers.</span>
 <button class="send-btn" data-send="Ask Orch-Insights to produce an executive summary for LT showing trends and risk across all customers.">Send to Chat</button></li>
 </ul>
+<div class="suggest-section"><button class="suggest-main" data-agent="Orch-Insights">💡 Suggest a New Prompt</button></div>
 </div>
 </details>
 
@@ -133,20 +141,31 @@ li:hover .send-btn{opacity:1}
 <div class="details-body">
 <p>Additional reference materials and quick video demos:</p>
 <div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/gfiUI2YLsgc?rel=0&modestbranding=1&playsinline=1" 
-    title="Prompt Orchestrator Demo" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
+  <iframe src="https://www.youtube.com/embed/gfiUI2YLsgc?rel=0&modestbranding=1&playsinline=1"
+    title="Prompt Orchestrator Demo"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
 </div>
 <p class="video-caption">▶ Watch directly in Teams — interactive demo video.</p>
+</div>
+</details>
+
+<!-- === F === -->
+<details>
+<summary>F. Other Prompts</summary>
+<div class="details-body">
+<p>To capture partner dynamics:</p>
+<ul>
+<li><span class="prompt-text" data-copy>Highlight advantages of [ ] region.</span>
+<button class="send-btn" data-send="Highlight advantages of [ ] region.">Send to Chat</button></li>
+</ul>
 </div>
 </details>
 
 </div>
 </div>
 </div>
-<div class="footer">Hover any prompt and click to copy or use “Send to Chat”.</div>
+<div class="footer">Hover any prompt and click to copy or send — use 💡 buttons to suggest new ones.</div>
 
 <script>
 (function(){
@@ -159,15 +178,26 @@ themeBtn.addEventListener('click',()=>{var c=cur();var n=c==='auto'?'light':(c==
 document.addEventListener('click',e=>{const t=e.target;if(!(t&&t.matches('.prompt-text[data-copy]')))return;
 navigator.clipboard.writeText(t.innerText).then(()=>{t.classList.add('copied');setTimeout(()=>t.classList.remove('copied'),1200);});});
 microsoftTeams.app.initialize().catch(()=>{});
+
+// Send to Chat
 document.addEventListener('click',async e=>{
 const btn=e.target;if(!(btn&&btn.matches('.send-btn[data-send]')))return;
 const message=btn.getAttribute('data-send');const appId="0b843c7a-5ae0-499b-8d23-6487fa0eb92b";
 try{await navigator.clipboard.writeText(message);
 const deep=`https://teams.microsoft.com/l/entity/${appId}/index?context=${encodeURIComponent(JSON.stringify({subEntityId:"chat"}))}`;
-window.open(deep,'_blank');btn.textContent="✓ Copied! Opened Orchestrator";
+window.open(deep,'_blank');btn.textContent="✓ Sent to Orchestrator";
 btn.style.background="rgba(37,99,235,.1)";
 setTimeout(()=>{btn.textContent="Send to Chat";btn.style.background="transparent";},2000);}
 catch(err){alert("Could not open chat. Prompt copied instead.");}});
+
+// Suggest New Prompt Button (Section wide)
+document.addEventListener('click',e=>{
+const btn=e.target;if(!(btn&&btn.matches('.suggest-main[data-agent]')))return;
+const agent=btn.getAttribute('data-agent');
+const message=`I would like to suggest adding the following Prompt: "[Prompt here]" to Agent ${agent}`;
+const chatUrl=`https://teams.microsoft.com/l/chat/0/0?users=josevazquez@microsoft.com&message=${encodeURIComponent(message)}`;
+window.open(chatUrl,'_blank');
+});
 })();
 </script>
 </body>
