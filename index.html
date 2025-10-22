@@ -199,15 +199,25 @@ li:hover .send-btn{opacity:1}
   // Teams SDK init
   microsoftTeams.app.initialize().then(()=>console.log("Teams SDK ready")).catch(()=>{});
 
-  // Send to Chat - Correct Copilot deep link
-  document.addEventListener('click',function(e){
+  // Send to Chat - Copy + Focus
+  document.addEventListener('click',async function(e){
     const btn=e.target;
     if(!(btn&&btn.matches('.send-btn[data-send]')))return;
     const message=btn.getAttribute('data-send');
-    const appId="2944efdc-b6da-4796-9b7e-216fab0baa58"; // Copilot app ID (same as manifest id)
-    const context={subEntityId:"chat",chatInput:message};
-    const deepLink=`https://teams.microsoft.com/l/entity/${appId}/index?context=${encodeURIComponent(JSON.stringify(context))}`;
-    window.open(deepLink,'_blank');
+    const appId="2944efdc-b6da-4796-9b7e-216fab0baa58"; // Steve's Copilot App ID
+
+    try {
+      if (navigator.clipboard) await navigator.clipboard.writeText(message);
+      const context={subEntityId:"chat"};
+      const deepLink=`https://teams.microsoft.com/l/entity/${appId}/index?context=${encodeURIComponent(JSON.stringify(context))}`;
+      window.open(deepLink,'_blank');
+      btn.textContent="✓ Copied! Opened Steve";
+      btn.style.background="rgba(37,99,235,.1)";
+      setTimeout(()=>{btn.textContent="Send to Chat";btn.style.background="transparent";},2000);
+    } catch(err){
+      console.error(err);
+      alert("Could not open chat. Prompt copied to clipboard instead.");
+    }
   });
 })();
 </script>
